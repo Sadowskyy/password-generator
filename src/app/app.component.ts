@@ -55,7 +55,8 @@ export class AppComponent {
   }
 
   setLength(value: string) {
-    const parsedValue = parseInt(value);
+    let parsedValue: number;
+    parsedValue = parseInt(value);
 
     if (!isNaN(parsedValue)) {
       this.length = parsedValue;
