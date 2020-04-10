@@ -11,13 +11,18 @@ export class AppComponent {
   includeLetters = false;
   includeNumbers = false;
   includeSymbols = false;
+  includeBigLetters = false;
 
   whenButtonClick() {
     const numbers = '1234567890';
     const letters = 'abcdefghijklmnopqrstuvwyz';
-    // const symbols = '!@#$%^&*()';
+    const bigLetters = letters.toUpperCase();
+    const symbols = '!@#$%^&*(){}|\';",./?`~`=-_';
 
     let validChars = '';
+    if (this.includeBigLetters) {
+      validChars += bigLetters;
+    }
     if (this.includeLetters) {
       validChars += letters;
     }
@@ -25,7 +30,7 @@ export class AppComponent {
       validChars += numbers;
     }
     if (this.includeSymbols) {
-      validChars += '!@#$%^&*()';
+      validChars += symbols;
     }
 
     let randomPassword = '';
@@ -44,6 +49,10 @@ export class AppComponent {
 
   useLetters() {
     this.includeLetters = !this.includeLetters;
+  }
+
+  useBigLetters() {
+    this.includeBigLetters = !this.includeBigLetters;
   }
 
   useNumbers() {
