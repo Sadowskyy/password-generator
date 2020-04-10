@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'course-udemy';
+  generatedPassword = '';
+  includeLetters = false;
+  includeNumbers = false;
+  includeSymbols = false;
+
+  whenButtonClick() {
+    console.log(this.includeLetters);
+    this.generatedPassword = 'GENERATED PASSWORD';
+  }
+
+  getPassword() {
+    return this.generatedPassword;
+  }
+
+  useLetters() {
+    console.log(this.includeLetters);
+    this.includeLetters = !this.includeLetters;
+  }
+
+  useNumbers() {
+    this.includeNumbers = !this.includeNumbers;
+  }
+
+  useSymbols() {
+    this.includeNumbers = !this.includeSymbols;
+  }
 }

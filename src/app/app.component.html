@@ -7,20 +7,21 @@ Length
 </div>
 <div class="checkbox">
   <label>Use letters</label>
-  <input type="checkbox">
+  <input (change)="useLetters()" type="checkbox">
 </div>
 <div class="checkbox">
   <label>Use numbers</label>
-  <input type="checkbox">
+  <input (change)="useNumbers()"  type="checkbox">
 </div>
 <div class="checkbox">
   <label>Use symbols</label>
-  <input type="checkbox">
+  <input (change)="useSymbols()" type="checkbox">
 </div>
 <div class="button">
-  <button>Generate password!</button>
+  <button (click)="whenButtonClick()">Generate password!</button>
 </div>
 <div class="generated-password">
   <label>Your password</label>
-  <input>
+  <input [value]="getPassword()">
 </div>
+<p>{{ generatedPassword }}</p>
