@@ -3,7 +3,7 @@ Length
 <hr>
 <div class="form">
   <label>Enter length</label>
-  <input>
+  <input (input)="setLength($event.target.value)" >
 </div>
 <div class="checkbox">
   <label>Use letters</label>
